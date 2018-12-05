@@ -2,6 +2,9 @@ import java.io.Console;
 import java.rmi.Naming;
 import java.util.Scanner;
 
+/* A classe client é o Cliente no sistema RMI.
+ * Ela é responsável por invocar os métodos remotos dos objetos criados pelo servidor.
+ */
 public class Client {
 	
 	private String username = null;

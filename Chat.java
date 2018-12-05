@@ -2,6 +2,10 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
+/* A classe chat irá gerar o Chat_stub ela implementa a
+ * ChatInterface que define os métodos remotos que poderão ser invocados pelos clientes.
+ * A classe Chat será instânciada para criar o objeto remoto.
+ */
 public class Chat extends UnicastRemoteObject implements ChatInterface {
 	
 	ArrayList<String> users = new ArrayList();

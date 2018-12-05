@@ -1,0 +1,48 @@
+Todas as definições e respostas a seguir foram retiradas do artigo: SPAGNOLI, Luciana de Araujo; BECKER, Karin.
+Um Estudo Sobre o Desenvolvimento Baseado em Componentes. 2003.
+
+Componente de Software
+
+a) Em primeiro plano temos a definição apresentada por [SAM97] onde é mostrado que componentes
+podem ser vistos como alguma parte do sistema de software que é identificável e reusável, ou
+como o estado seguinte de abstração depois de funções, módulos e classes.
+
+A segunda definição a ser considerada é a apresentada por [BRO97], na qual componente é
+caracterizado como “conjunto independente de serviços reutilizáveis”.
+
+Uma terceira definição de componente a ser considerada é a apresentada por [SZY99],
+pela qual “componente de software é uma unidade de composição com interfaces contratualmente
+especificadas e apenas explícitas dependências de contexto. Componente de software pode ser
+usado independente e combinado com outras partes”.
+
+b) Neste sentido, as definições de [BRO97] e [SZY99] ressaltam este aspecto mais maduro de
+ DBC, onde se preocupam exclusivamente com componentes como sendo a abstração seguinte a funções,
+ módulos e classes. Em contrapartida, a definição de [SAM97] trata componentes não apenas como
+ componentes de códigos, mas também como todo possível tipo de componente independente de forma.
+ A conceituação de [SAM97] ressalta melhor uma situação de DBC quando o foco não estiver apenas no
+ reuso de componentes de código, e sim de componentes em todas as fases do processo de desenvolvimento de software.
+
+Framework de Componentes
+a) O conceito definido por [BAC02] como framework de componentes é identificado em [BRO00] como
+infra-estrurura de componentes, sendo estabelecido também como tipicamente responsável por ao menos
+uma destas categorias de serviços: empacotamento, distribuição, segurança, gerenciamento de transações
+e comunicação assíncrona.
+
+b) O framework de componente, conforme [BAC02], é a implementação de serviços que dão suporte
+ou reforçam o modelo de componentes. A função do framework é gerenciar os recursos compartilhados
+pelos componentes e prover um mecanismo que possibilite a comunicação (interação) entre eles.
+A infra-estrutura oferecida pelos frameworks de componentes impõem restrições e regras no projeto e
+implementação, as quais devem ser consideradas pelo modelo de componentes.
+
+Modelo de Componentes
+a) Conforme [BAC02], os componentes podem ser vistos segundo duas distintas perspectivas: implementações
+e abstrações arquiteturais. Vistos como implementações, os componentes representam artefatos de software
+que podem ser disponibilizados e usados para compor grandes sistemas/subsistemas. Por outro lado, vistos
+como abstrações arquiteturais, os componentes expressam regras de projeto que impõem um modelo padrão de
+coordenação para todos os componentes. Estas regras de projeto têm a forma de um modelo de componente, ou
+de um conjunto de padrões e convenções com as quais os componentes devem estar em conformidade.
+
+b) Segundo [BAC02], um modelo de componente representa um elemento da arquitetura do sistema na qual são
+definidos os padrões e convenções impostas aos componentes do sistema, de modo a descrever a função de cada
+um e como eles interagem entre si. Com isso busca-se expressar restrições de projeto arquitetural ou global.
+
