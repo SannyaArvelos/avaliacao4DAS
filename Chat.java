@@ -10,5 +10,9 @@ public class Chat extends UnicastRemoteObject implements ChatInterface {
 	public boolean sendMessage(String message) throws RemoteException {
 		return true;
 	}
+	
+	public boolean registrateUser(String message) throws RemoteException {
+		return true;
+	}
 
 }
