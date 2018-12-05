@@ -1,0 +1,16 @@
+Questão 2
+
+a) stub
+Quando um cliente recebe uma referência a um servidor, o RMI faz o download de um stub que converte as chamadas nessa referência em chamadas remotas para o servidor. O stub empacota os argumentos para o método usando a serialização de objetos e envia a chamada empacotada através do fio para o servidor.
+
+b) skeleton 
+No lado do servidor, a chamada é recebida pelo sistema RMI e conectada a um esqueleto, que é responsável por desmarcar os argumentos e invocar a implementação do método pelo servidor. No lado do servidor, a chamada é recebida pelo sistema RMI e conectada a um esqueleto, que é responsável por desmarcar os argumentos e invocar a implementação do método pelo servidor. O esqueleto empacota o resultado e envia uma resposta ao stub do cliente
+
+c) registro
+Registro é uma espécie de "repositório" onde ficam armazenados os objetos remotos, que são disponibilizados para que os clientes possam invocar métodos, através de invocação remota. Estes objetos remotos são criados por servidores, dessa forma, os servidores guardam a referência para esses objetos. Ou seja, o registro é responsável por guardar os objetos remotos.
+
+d) serialização (marshalling e unmarshalling) e invocação remota de métodos
+Serialização - É um mecanismo para converter o estado de um objeto em um byte stream, preservando as suas informações. Essa representação em byte stream incluem todos os dados do objeto, bem como informações acerca do tipos tipo de dados guardados no objeto. JavaRMI usa a serialização de objeto realizar marshalling e unmarshalling mantendo a integridade das informações do objeto.
+
+Invocação Remota de Métodos - Um sistema RMI (Remote Method Invocation) é geralmente composto de dois subsistemas um servidor e um cliente. Os objetos criados pelo servidor ficam disponíveis através de chamadas remotas realizadas pelos clientes. O clientes realizam a chamada de remota de métodos  No JavaRMI o sistema obtêm as referências para os objetos remotos pode ser feita ou através de "Naming facility" (rmiregistry) ou através de passagem e retorno de objetos remotos.
+
