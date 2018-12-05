@@ -11,13 +11,14 @@ public class Broadcast implements Runnable {
 	public void run() {
 		ChatInterface chat = client.getChat();
 		String username = client.getUsername();
-		System.out.println("Run");
 		while (true) {
 			try {
 				Integer chatLastMessageId = chat.getLastMessageId();
 				if (lastMessageId != chatLastMessageId) {
-					lastMessageId = chatLastMessageId;
-					System.out.println(chat.getMessage(username));
+					if (chat.canGetMessage(username)) {
+						lastMessageId = chatLastMessageId;
+						System.out.println(chat.getMessage(username));						
+					}
 				}			
 			} catch(Exception exception) {
 				System.out.println(exception);

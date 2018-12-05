@@ -28,17 +28,30 @@ public class Chat extends UnicastRemoteObject implements ChatInterface {
 		return lastMessageId;
 	}
 	
-	public String getMessage(String username) throws RemoteException {
-		
+	private boolean isDirectMessage() {
 		String direct = "@";
-		String directUsername = "@" + username;
-		boolean isDirectMessage = (message.substring(0, 1) == direct);
-		boolean directMessageContainsUser = message.contains(directUsername);
-		boolean showDirectMessage = (isDirectMessage && directMessageContainsUser);
+		return (message.substring(0, 1).equals(direct));
+	}
 	
-		if (showDirectMessage) {
+	public boolean canGetMessage(String username) throws RemoteException {
+	
+		String directUsername = "@" + username;
+		boolean userCanSeeMessage = (isDirectMessage() && message.contains(directUsername));
+		
+		// User can see message if it is not a direct image or is a direct
+		// message to the given user
+		return (userCanSeeMessage || !isDirectMessage());
+	}
+	
+	public String getMessage(String username) throws RemoteException {
+
+		String directUsername = "@" + username;
+		boolean isDirectMessageToUser = message.contains(directUsername);
+		boolean isPrivateMessage = (isDirectMessage() && isDirectMessageToUser);
+	
+		if (isPrivateMessage) {
 			return PrintMessage.privateMessage(this.username, message);
-		} else if (!isDirectMessage) {
+		} else if (!isDirectMessage()) {
 			return PrintMessage.publicMessage(this.username, message);
 		} else {
 			return PrintMessage.infoMessage(message);
