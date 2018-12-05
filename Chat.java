@@ -13,6 +13,12 @@ public class Chat extends UnicastRemoteObject implements ChatInterface {
 		super();
 	}
 	
+	public boolean sendMessage(String message) throws RemoteException {
+		lastMessageId += 1;
+		this.message = message;
+		return true;
+	}
+	
 	public boolean sendMessage(String username, String message) throws RemoteException {
 		lastMessageId += 1;
 		this.message = message;

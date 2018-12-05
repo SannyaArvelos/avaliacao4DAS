@@ -38,8 +38,8 @@ public class Client {
 	
 	public void writeMessage() {
 		while(true) {
-			System.out.print("\b \b");
-			System.out.print(username + ": ");
+//			System.out.print("\b \b");
+//			System.out.print(username + ": ");
 			String message = scanner.nextLine();
 			try {				
 				chat.sendMessage(username, message);
@@ -50,12 +50,19 @@ public class Client {
 		}
 	}
 	
-	public void registrateUser() {
+	private void printWelcomeMessage() {
+		System.out.println(PrintMessage.successMessage("BEM-VINDO AO CHAT DE TPPS!\n\n"));
+		System.out.print(PrintMessage.successMessage("Para enviar uma mensagem direta: "));
+		System.out.println("@username sua mensagem");
 		System.out.print("Digite seu username: ");
+	}
+	
+	public void registrateUser() {
+		printWelcomeMessage();
 		username = scanner.nextLine();
-		System.out.println(username);
 		try {
-			chat.registrateUser(username);			
+			chat.registrateUser(username);
+			chat.sendMessage(username + " entrou no chat!");
 		} catch (Exception exception) {
 			System.out.println(exception);
 		}
